@@ -15,6 +15,15 @@ def main():
         title = font.render("Puzzle Game - Choose Mode", True, (0, 0, 0))
         screen.blit(title, (150, 50))
 
+        instructions = [
+            "Use the arrow keys to move tiles.",
+            "Press 1 for 8-puzzle mode.",
+            "Press 2 for 15-puzzle mode."
+        ]
+        for i, line in enumerate(instructions):
+            text = font.render(line, True, (0, 0, 0))
+            screen.blit(text, (20, 300 + i * 30))
+
         modes = ["8-puzzle", "15-puzzle"]
         for i, mode in enumerate(modes):
             text = font.render(f"{i + 1}. {mode}", True, (0, 0, 255))
